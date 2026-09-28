@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sowm's Glam Studio - Professional Beauty & Bridal Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #834c52;
+            --gold: #765a27;
+            --dark-text: #1c1c19;
+            --body-text: #514344;
+            --muted: #625b53;
+            --bg-cream: #fdf9f4;
+            --border-light: #e8e3de;
+            --section-light: #f7f3ee;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--body-text);
+            background-color: var(--bg-cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-text);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(253, 249, 244, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo-text h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .logo-text p {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--body-text);
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #6b3d43;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(131, 76, 82, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-subheading {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+            margin-top: 2rem;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-item p {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--section-light);
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            max-width: 220px;
+        }
+
+        .badge-label {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* ============ ABOUT SECTION ============ */
+        .about {
+            background: var(--section-light);
+            padding: 4rem 2rem;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #e8e3de;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            font-size: 42px;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--body-text);
+        }
+
+        /* ============ SERVICES SECTION ============ */
+        .services {
+            padding: 4rem 2rem;
+        }
+
+        .services-header {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .services-header h2 {
+            font-size: 42px;
+            margin-bottom: 1rem;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 200px;
+            background: #e8e3de;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ============ FORM SECTION ============ */
+        .form-wrapper {
+            background: var(--section-light);
+            padding: 4rem 2rem;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-header h2 {
+            font-size: 36px;
+            margin-bottom: 0.75rem;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-text);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--body-text);
+            transition: all 0.3s;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(131, 76, 82, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--muted);
+        }
+
+        .form-helpers {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 12px;
+        }
+
+        .char-count {
+            color: var(--muted);
+        }
+
+        .whatsapp-note {
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+
+        .form-submit:hover {
+            background: #6b3d43;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(131, 76, 82, 0.3);
+        }
+
+        .form-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1.5rem;
+            display: none;
+            font-size: 14px;
+            animation: slideIn 0.3s ease;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+            border: 1px solid #f5c6cb;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--dark-text);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 16px;
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            transition: color 0.3s;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--gold);
+            color: var(--dark-text);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+                justify-content: flex-start;
+            }
+
+            .header-cta {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .header-cta .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero, .about-container {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .about-content h2 {
+                font-size: 32px;
+            }
+
+            .trust-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 2rem 1rem;
+            }
+
+            .form-container h2 {
+                font-size: 28px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo-icon">S</div>
+                <div class="logo-text">
+                    <h3>Sowm's Glam</h3>
+                    <p>Beauty Studio</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#packages">Packages</a>
+                <a href="#academy">Academy</a>
+                <a href="#transformations">Transformations</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-cta">
+                <button class="btn btn-secondary">Notifications</button>
+                <button class="btn btn-primary" onclick="document.getElementById('bookingForm').scrollIntoView({behavior: 'smooth'})">Book Now</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Beauty. Your Moment. Your Signature Look.</h1>
+            <p class="hero-subheading">Professional makeup, hair and beauty services designed around you — from bridal celebrations to your everyday glow.</p>
+            <div class="hero-location">📍 Thiruvannamalai, Tamil Nadu</div>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="document.getElementById('bookingForm').scrollIntoView({behavior: 'smooth'})">Book Consultation</button>
+                <button class="btn btn-secondary" onclick="window.open('https://wa.me/916369939029?text=Hi%20Sowm%27s%20Glam%20Studio%2C%20I%20need%20beauty%20services')">WhatsApp Us</button>
+            </div>
+            <div class="trust-row">
+                <div class="trust-item">
+                    <h4>Personalised Looks</h4>
+                    <p>Custom design for you</p>
+                </div>
+                <div class="trust-item">
+                    <h4>Professional Services</h4>
+                    <p>Expert beauty team</p>
+                </div>
+                <div class="trust-item">
+                    <h4>Thiruvannamalai</h4>
+                    <p>Local beauty experts</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div style="text-align: center; color: var(--muted); width: 100%;">
+                <p style="padding-top: 50px;">Beauty Studio Image</p>
+            </div>
+            <div class="floating-badge">
+                <div class="badge-label">Award Winning</div>
+                <div class="badge-title">Premium Styling</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-image">
+                <div style="text-align: center; color: var(--muted); width: 100%;">
+                    <p style="padding-top: 150px;">Studio Interior</p>
+                </div>
+            </div>
+            <div class="about-content">
+                <h2>Beauty That Feels Like You</h2>
+                <p>At Sowm's Glam Studio, we believe every person deserves to feel beautiful and confident. Our team of experienced beauty professionals specializes in creating customized looks that enhance your natural features.</p>
+                <p>From bridal elegance to everyday glamour, we craft beauty solutions tailored specifically to you. Our studio combines traditional artistry with modern techniques for results that truly stand out.</p>
+                <button class="btn btn-primary" onclick="document.getElementById('bookingForm').scrollIntoView({behavior: 'smooth'})">Schedule Consultation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="services-header">
+            <h2>Our Services</h2>
+            <p style="color: var(--muted);">Complete beauty solutions for every occasion</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-card-image">Bridal Makeup</div>
+                <div class="service-card-content">
+                    <h3>Bridal Makeup</h3>
+                    <p>South Indian traditional bridal makeup artistry with modern HD techniques for your special day</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card-image">HD Makeup</div>
+                <div class="service-card-content">
+                    <h3>HD Makeup</h3>
+                    <p>Camera-ready HD makeup application for flawless, radiant skin that photographs beautifully</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card-image">Airbrush Makeup</div>
+                <div class="service-card-content">
+                    <h3>Airbrush Makeup</h3>
+                    <p>Luxury airbrush makeup application for radiant, dewy glowing skin with lasting power</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card-image">Hydra Facial</div>
+                <div class="service-card-content">
+                    <h3>Hydra Facial & Radiance</h3>
+                    <p>Luxury hydra facial clinic treatment with dewy glowing skin results for ultimate glow</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card-image">Hair Smoothening</div>
+                <div class="service-card-content">
+                    <h3>Hair Smoothening & Botox</h3>
+                    <p>Luxury hair salon aesthetic with glossy, smooth botox-treated hair transformation</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card-image">Hair Styling</div>
+                <div class="service-card-content">
+                    <h3>Hair Styling & Jadai</h3>
+                    <p>Traditional South Indian bridal braided hairstyle with temple accessories expertise</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card-image">Party Makeup</div>
+                <div class="service-card-content">
+                    <h3>Party Makeup</h3>
+                    <p>Occasion party makeup looks designed for events and celebrations of all kinds</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card-image">Facials</div>
+                <div class="service-card-content">
+                    <h3>Luxury Facials & Spa</h3>
+                    <p>Luxury facial and aesthetic beauty spa treatments with warm ambiance and care</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-card-image">Nails & Care</div>
+                <div class="service-card-content">
+                    <h3>Mani-Pedi & Bespoke Care</h3>
+                    <p>Complete nail care and customized beauty maintenance services for all occasions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM SECTION -->
+    <section class="form-wrapper" id="bookingForm">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Book Your Beauty Appointment</h2>
+            </div>
+            <p class="form-subtitle">Fill in your details and we'll get back to you within 24 hours</p>
+
+            <form id="consultationForm">
+                <!-- Name & Email -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                    </div>
+                </div>
+
+                <!-- Phone & Event Date -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+                        <div class="whatsapp-note">💬 We'll contact you via WhatsApp</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDate">Event Date</label>
+                        <input type="date" id="eventDate" name="eventDate" />
+                    </div>
+                </div>
+
+                <!-- Location & Event Type -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="location">Event Location</label>
+                        <input type="text" id="location" name="location" placeholder="Wedding venue or salon" />
+                    </div>
+                    <div class="form-group">
+                        <label for="eventType">Type of Event *</label>
+                        <select id="eventType" name="eventType" required>
+                            <option value="">Select event type</option>
+                            <option value="Bridal">Bridal</option>
+                            <option value="Party">Party Makeup</option>
+                            <option value="HD Makeup">HD Makeup</option>
+                            <option value="Hair Styling">Hair Styling</option>
+                            <option value="Facial">Facial & Treatments</option>
+                            <option value="Full Package">Full Package</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Budget & Preferences -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="Below 10k">Below ₹10,000</option>
+                            <option value="10k-25k">₹10,000 - ₹25,000</option>
+                            <option value="25k-50k">₹25,000 - ₹50,000</option>
+                            <option value="50k-1L">₹50,000 - ₹1,00,000</option>
+                            <option value="Above 1L">Above ₹1,00,000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferences">Beauty Preferences</label>
+                        <input type="text" id="preferences" name="preferences" placeholder="e.g., HD makeup, airbrush, traditional" />
+                    </div>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="specialRequests">Special Requests or Details</label>
+                        <textarea id="specialRequests" name="specialRequests" placeholder="e.g., Saree draping required, sensitive skin, wedding date/venue details, or specific hairstyle in mind..."></textarea>
+                        <div class="form-helpers">
+                            <span class="char-count"><span id="charCount">0</span>/500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="form-submit">✓ Send Booking Request</button>
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sowm's Glam Studio</h3>
+                <p>Professional beauty and bridal styling in Thiruvannamalai. Transforming beauty with personalized care and expert artistry.</p>
+                <div class="social-icons">
+                    <a href="#facebook" title="Facebook">f</a>
+                    <a href="#instagram" title="Instagram">📷</a>
+                    <a href="#whatsapp" title="WhatsApp">💬</a>
+                    <a href="#twitter" title="Twitter">𝕏</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#services">Services</a>
+                <a href="#packages">Packages</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#academy">Academy</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#services">Bridal Makeup</a>
+                <a href="#services">HD Makeup</a>
+                <a href="#services">Hair Styling</a>
+                <a href="#services">Facials</a>
+                <a href="#services">Party Makeup</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📞 +91 6369 939 029</p>
+                <p>📧 info@sowmsglam.com</p>
+                <p>📍 Thiruvannamalai<br>Tamil Nadu, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sowm's Glam Studio. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script>
+        const GOOGLE_FORM_URL = 'https://script.google.com/macros/s/AKfycbz5Xys2ghJM-TkQZSNMPueuHVYplCj6DyVevWyMlR22BHDpX3mTzfm6m5mkdG3iivvB/exec';
+        const WHATSAPP_NUMBER = '6369939029';
+
+        const form = document.getElementById('consultationForm');
+        const formMessage = document.getElementById('formMessage');
+        const charCountSpan = document.getElementById('charCount');
+        const specialRequestsTextarea = document.getElementById('specialRequests');
+
+        specialRequestsTextarea.addEventListener('input', function() {
+            charCountSpan.textContent = Math.min(this.value.length, 500);
+            this.value = this.value.substring(0, 500);
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                eventDate: document.getElementById('eventDate').value || '',
+                location: document.getElementById('location').value || '',
+                eventType: document.getElementById('eventType').value,
+                budget: document.getElementById('budget').value || '',
+                preferences: document.getElementById('preferences').value || '',
+                specialRequests: document.getElementById('specialRequests').value || ''
+            };
+
+            if (!formData.name || !formData.email || !formData.phone || !formData.eventType) {
+                showError('Please fill in all required fields (marked with *)');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                showError('Please enter a valid email address');
+                return;
+            }
+
+            const cleanPhone = formData.phone.replace(/\D/g, '');
+            if (cleanPhone.length < 10) {
+                showError('Please enter a valid phone number (at least 10 digits)');
+                return;
+            }
+
+            const submitButton = form.querySelector('.form-submit');
+            submitButton.disabled = true;
+            submitButton.textContent = '⏳ Submitting...';
+
+            const params = new URLSearchParams({
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                eventDate: formData.eventDate,
+                location: formData.location,
+                eventType: formData.eventType,
+                budget: formData.budget,
+                preferences: formData.preferences,
+                specialRequests: formData.specialRequests
+            });
+
+            const fetchUrl = GOOGLE_FORM_URL + '?' + params.toString();
+
+            fetch(fetchUrl, {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => {
+                showSuccess();
+                sendWhatsAppMessage(formData);
+                form.reset();
+                charCountSpan.textContent = '0';
+                submitButton.disabled = false;
+                submitButton.textContent = '✓ Send Booking Request';
+            })
+            .catch(() => {
+                showError('Error submitting form. Please check your connection and try again.');
+                submitButton.disabled = false;
+                submitButton.textContent = '✓ Send Booking Request';
+            });
+        });
+
+        function showSuccess() {
+            formMessage.innerHTML = '✓ Thank you! Your booking request has been sent. We\'ll contact you via WhatsApp shortly.';
+            formMessage.className = 'form-message success';
+            setTimeout(() => {
+                formMessage.className = 'form-message';
+            }, 8000);
+        }
+
+        function showError(message) {
+            formMessage.innerHTML = '✗ ' + message;
+            formMessage.className = 'form-message error';
+            setTimeout(() => {
+                formMessage.className = 'form-message';
+            }, 6000);
+        }
+
+        function sendWhatsAppMessage(formData) {
+            const message = `Hi Sowm's Glam Studio,
+
+I'd like to book an appointment:
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone}
+*Event Type:* ${formData.eventType}
+${formData.eventDate ? `*Event Date:* ${formData.eventDate}\n` : ''}${formData.location ? `*Location:* ${formData.location}\n` : ''}${formData.budget ? `*Budget:* ${formData.budget}\n` : ''}${formData.preferences ? `*Preferences:* ${formData.preferences}\n` : ''}
+*Special Requests:*
+${formData.specialRequests || 'None'}
+
+Please confirm availability and pricing.`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+            }, 500);
+        }
+
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 10) value = value.slice(0, 10);
+            
+            if (value.length > 0) {
+                if (value.length <= 5) {
+                    e.target.value = value;
+                } else if (value.length <= 8) {
+                    e.target.value = value.slice(0, 5) + ' ' + value.slice(5);
+                } else {
+                    e.target.value = value.slice(0, 5) + ' ' + value.slice(5, 8) + ' ' + value.slice(8);
+                }
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
